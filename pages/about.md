@@ -3,21 +3,19 @@ layout: mypost
 title: 关于我
 ---
 
-> Hello 陌生人，欢迎访问 TMaize Blog
+> Hello 陌生人，欢迎访问 Butterfly～ Blog
 
-该博客托管于 GitHub Page，国内默认解析到腾讯云，以保证国内外的访问速度。留言页面使用腾讯的“吐个槽”，另外使用的腾讯的 MTA 分析工具统计访问量
+该博客托管于 GitHub Page，目前还未绑定个人域名，所以国内访问速度可能不太理想，有需要的话，可以翻墙^_^。后续如果顺利的话考虑绑定域名。
 
-主题使自己写的，见[tmaize-blog](https://github.com/TMaize/tmaize-blog)，欢迎 Star&Fork。另喜欢本博客的欢迎**添加友链**，在[留言板](chat.html)留言即可
+主题是Fork自**github**上的[tmaize-blog](https://github.com/TMaize/tmaize-blog)，简洁的风格很是喜欢，欢迎各位去 Star&Fork。另喜欢本博客的欢迎**添加友链**。
 
 ## 相关技能
 
-- 熟悉 JavaScript 语言， 熟练使用 Vue 全家桶,jQuery 等前端框架
+- 前端开发，精通 JavaScript、HTML、CSS， 熟练 Vue 全家桶, 熟悉 React、Angular 等前端框架，熟悉 uni-app 混合开发，熟悉 Flutter 移动端开发
 
-- 熟悉 Java，NodeJs,Go 等后端语言
+- 熟悉 Java，Node.Js等后端语言，熟悉java中的Sping Boot、Spring Cloud、Spring Data Jpa、Mybatis等框架，熟悉node.js中的express、nest.js等框架
 
-- 后端框架 Spring，Hibernate，JFinal，Mybatis 略有了解
-
-- 数据库方面能熟练使用 MySQL,Oracle，MongoDB
+- 数据库方面能熟练使用 MySQL，MongoDB
 
 - Linux 的简单使用，各种服务的搭建
 
@@ -25,8 +23,8 @@ title: 关于我
 
 ## 联系我
 
-- QQ : 1772314831
+- QQ : 952078511
 
-- Email : [tmaize@qq.com](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=YBQNAQkaBSAREU4DDw0)
+- Email : 952078511@qq.com
 
-- GitHub : [https://github.com/tmaize](https://github.com/tmaize)
+- GitHub : [https://github.com/dengs-official](https://github.com/dengs-official)
