@@ -166,6 +166,10 @@ body {
   padding: 0 4px;
   white-space: nowrap;
 }
+
+.page {
+  flex: 1;
+}
 #to-top {
   position: fixed;
   z-index: 999;
