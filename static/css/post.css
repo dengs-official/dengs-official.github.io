@@ -2,6 +2,7 @@
   font-size: 14px;
   line-height: 2;
   word-break: break-all;
+  flex: 1;
 }
 .page-post .title {
   font-size: 18px;
