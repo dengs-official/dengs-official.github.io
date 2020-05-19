@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: 《JavaScript高级程序设计》读书笔记-执行环境及作用域
+title: 《JavaScript高级程序设计》读书笔记--执行环境及作用域
 categories: [JavaScript]
 ---
 
