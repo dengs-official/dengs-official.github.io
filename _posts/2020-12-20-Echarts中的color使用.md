@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Echarts中的Color
+title: Echarts中的color使用
 categories: [Echarts, 数据可视化]
 ---
 

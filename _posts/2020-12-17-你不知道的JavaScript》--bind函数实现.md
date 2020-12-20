@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: 《你不知道的JavaScript》--bind函数实现
-categories: [JavaScript]
+categories: [JavaScript, 基础底层]
 ---
 
 ## 背景
