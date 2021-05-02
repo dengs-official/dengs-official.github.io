@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: 《Vue源码解析》-Vue&VNode对象
-categories: [Vue.js]
+categories: [Vue.js, Vue源码解析]
 ---
 
 ## Vue对象
