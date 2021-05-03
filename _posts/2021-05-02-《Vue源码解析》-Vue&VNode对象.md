@@ -4,8 +4,6 @@ title: 《Vue源码解析》-Vue&VNode对象
 categories: [Vue.js]
 ---
 
-[TOC]
-
 ## Vue对象
 
 Vue对象是开发过程中经常接触到的，根节点是通过 `new Vue()` 生成的Vue对象实例，单文件组件是Vue子对象的配置，最终会注册为Vue子对象；那么Vue对象究竟是什么，其生成的实例又有什么，一起来看下
