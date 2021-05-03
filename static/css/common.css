@@ -12,7 +12,6 @@ body {
   flex-direction: column;
   padding: 0;
   margin: 0;
-  color: #333333;
   background: #ffffff;
   scroll-behavior: smooth;
   transition: all .5s ease-in-out;
@@ -22,6 +21,7 @@ body {
   font-family: Consolas, 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
 }
 * {
+  color: #333333;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -120,12 +120,7 @@ body {
 }
 .header {
   padding: 40px 0;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-flow: row nowrap;
-  -webkit-box-align: center;
   align-items: center;
   justify-content: space-between;
 }
