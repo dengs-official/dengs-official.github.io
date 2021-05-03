@@ -142,8 +142,8 @@ body {
   transform: rotate(360deg);
 }
 .header .menu {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
+  /* -webkit-box-flex: 1; */
+  /* flex-grow: 1; */
 }
 .header .menu a {
   font-size: 15px;
