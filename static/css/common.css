@@ -12,18 +12,19 @@ body {
   flex-direction: column;
   padding: 0;
   margin: 0;
+  color: #333333;
   background: #ffffff;
   scroll-behavior: smooth;
+  transition: all .5s ease-in-out;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: Consolas, 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC',
-    'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-family: Consolas, 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
 }
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  color: #333333;
 }
 p,
 h1,
@@ -126,6 +127,7 @@ body {
   flex-flow: row nowrap;
   -webkit-box-align: center;
   align-items: center;
+  justify-content: space-between;
 }
 .header .logo {
   width: 42px;

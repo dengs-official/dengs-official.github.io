@@ -14,8 +14,10 @@ title: 首页
     {%- endif %}
         <li>
           <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
-          <a href="{{ site.baseurl | append: post.url }}" class="title hover-underline">{{ post.title }}</a>
-          {% for categorie in post.categories -%}
+          <div class="title">
+            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+            {% for categorie in post.categories -%}
+          </div>
           <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="category hover-underline">{{ categorie }}</a>
           {%- endfor %}
         </li>
