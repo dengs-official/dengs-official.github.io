@@ -12,15 +12,15 @@ Vue对象是一个 **构造函数**，可以通过new的方式实例化，函数
 
 ### config
 
-Vue对象本身定义了一个config属性，用于全局配置Vue的一些行为，后续都会依照这些行为进行渲染更新等操作，不支持全替换，只支持 `Vue.config.xx` 的方式修改，在应用启动前配置，可用配置见官网 [全局配置]([https://cn.vuejs.org/v2/api/#全局配置](https://cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE))
+Vue对象本身定义了一个config属性，用于全局配置Vue的一些行为，后续都会依照这些行为进行渲染更新等操作，不支持全替换，只支持 `Vue.config.xx` 的方式修改，在应用启动前配置，可用配置见官网 [全局配置](https://cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
 
 ### api
 
-Vue对象本身扩展了一些全局api，用于提供一些方法实现系统内部提供的功能，这些api通过 `initGlobalAPI` 设置进去，可见官网[全局API]([https://cn.vuejs.org/v2/api/#全局-API](https://cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80-API))
+Vue对象本身扩展了一些全局api，用于提供一些方法实现系统内部提供的功能，这些api通过 `initGlobalAPI` 设置进去，可见官网[全局API](https://cn.vuejs.org/v2/api/#%E5%85%A8%E5%B1%80-API)
 
 ### prototype
 
-Vue对象还在原型上扩展了一些属性和方法，使得实例化后的对象都可以直接调用这些属性和方法，用于操作实例实现系统内部通过的功能。这些是在 `xxMixin` 时设置进去的，常以 `$` 开头, 可见官网[实例xx]([https://cn.vuejs.org/v2/api/#实例-property](https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B-property))
+Vue对象还在原型上扩展了一些属性和方法，使得实例化后的对象都可以直接调用这些属性和方法，用于操作实例实现系统内部通过的功能。这些是在 `xxMixin` 时设置进去的，常以 `$` 开头, 可见官网[实例xx](https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B-property)
 
 ### options
 
@@ -91,7 +91,7 @@ Vue对象本身有一个全局的options对象，在 `initGlobalAPI` 时设置�
   ```
   
 
-支持的options可见官网[选项xx]([https://cn.vuejs.org/v2/api/#选项-数据](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E6%95%B0%E6%8D%AE))
+支持的options可见官网[选项xx](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E6%95%B0%E6%8D%AE)
 
 ## VNode对象
 
@@ -120,4 +120,4 @@ VNode对象都是通过createElement函数生成的，其接受3个参数
 
 在template中，数据对象通过各种指令的方式简化开发者使用，在不知觉的过程中传入了数据对象，而子节点则直接通过html嵌套的方式传入
 
-在render函数中，则需要显式的传入，通过 `jsx` 的方式可以同时使用javascript的灵活和html的嵌套语法编写render函数，其中支持的数据对象可以通过官网[深入数据对象]([https://cn.vuejs.org/v2/guide/render-function.html#深入数据对象](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1))
+在render函数中，则需要显式的传入，通过 `jsx` 的方式可以同时使用javascript的灵活和html的嵌套语法编写render函数，其中支持的数据对象可以通过官网[深入数据对象](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1)
