@@ -26,69 +26,70 @@ Vue对象还在原型上扩展了一些属性和方法，使得实例化后的�
 
 Vue对象本身有一个全局的options对象，在 `initGlobalAPI` 时设置。Vue对象实例化时，支持传入一个options，通过合并全局配置生成Vue实例。这里分两种情况
 
-一. 手动调用
+* 手动调用
 
-手动调用即 `new Vue()` ,合并过程比较简单，通过 `mergeOptions` 方法，将全局options, 传入options, 继承/混入options 进行合并，生成到实例的 `$options`属性下，供后面使用，生成VNode对象实例，结果如下
+  手动调用即 `new Vue()` ,合并过程比较简单，通过 `mergeOptions` 方法，将全局options, 传入options, 继承/混入options 进行合并，生成到实例的 `$options`属性下，供后面使用，生成VNode对象实例，结果如下
 
-```jsx
-vm.$options = {
-  components: { },
-  created: [
-    function created() {
-      console.log('parent created')
-    }
-  ],
-  directives: { },
-  filters: { },
-  _base: function Vue(options) {
-    // ...
-  },
-  el: "#app",
-  render: function (h) {
-    //...
-  }
-}
-```
-
-二. 组件调用
-
-组件调用即注册并使用组件，分为注册和使用两个阶段；
-
-- 注册时，通过 `mergeOptions` 方法，将全局options，组件定义的options，继承/混入options合并，设置到子对象 `options` 属性中
-- 使用时，通过 `initInternalComponent` 方法，将子对象options设置为实例的 `$options` 属性的原型；将父VNode对象实例，父Vue对象实例，设置到实例的 `$options` 中，供后面使用，生成VNode对象实例，结果如下
-
-```jsx
-vm.$options = {
-  parent: Vue /*父Vue实例*/,
-  propsData: undefined,
-  _componentTag: undefined,
-  _parentVnode: VNode /*父VNode实例*/,
-  _renderChildren:undefined,
-  __proto__: {
+  ```jsx
+  vm.$options = {
     components: { },
+    created: [
+      function created() {
+        console.log('parent created')
+      }
+    ],
     directives: { },
     filters: { },
     _base: function Vue(options) {
-        //...
+      // ...
     },
-    _Ctor: {},
-    created: [
-      function created() {
-      }
-    ],
-    mounted: [
-      function mounted() {
-      }
-    ],
-    data() {
-       return {
-         msg: 'Hello Vue'
-       }
-    },
-    template: '<div>{{msg}}</div>'
+    el: "#app",
+    render: function (h) {
+      //...
+    }
   }
-}
-```
+  ```
+
+* 组件调用
+
+  组件调用即注册并使用组件，分为注册和使用两个阶段；
+
+  - 注册时，通过 `mergeOptions` 方法，将全局options，组件定义的options，继承/混入options合并，设置到子对象 `options` 属性中
+  - 使用时，通过 `initInternalComponent` 方法，将子对象options设置为实例的 `$options` 属性的原型；将父VNode对象实例，父Vue对象实例，设置到实例的 `$options` 中，供后面使用，生成VNode对象实例，结果如下
+
+  ```jsx
+  vm.$options = {
+    parent: Vue /*父Vue实例*/,
+    propsData: undefined,
+    _componentTag: undefined,
+    _parentVnode: VNode /*父VNode实例*/,
+    _renderChildren:undefined,
+    __proto__: {
+      components: { },
+      directives: { },
+      filters: { },
+      _base: function Vue(options) {
+          //...
+      },
+      _Ctor: {},
+      created: [
+        function created() {
+        }
+      ],
+      mounted: [
+        function mounted() {
+        }
+      ],
+      data() {
+        return {
+          msg: 'Hello Vue'
+        }
+      },
+      template: '<div>{{msg}}</div>'
+    }
+  }
+  ```
+  
 
 支持的options可见官网[选项xx]([https://cn.vuejs.org/v2/api/#选项-数据](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E6%95%B0%E6%8D%AE))
 
@@ -102,9 +103,9 @@ VNode对象在开发过程中，一般情况下很少直接接触，它主要是
 
 它作为一个附属属性被包含在 `Vue对象` 中，在生成Vue对象过程中通过 `render` 函数生成，如果是写的 `template`,则会被转换为render函数
 
-在Vue对象生成过程中，会创建两个VNode类型属性，他们分别在不同的vue对象中生成的，具体过程如下
+在Vue对象生成过程中，会创建两个VNode类型属性，他们分别在不同的vue对象中生成的，具体如下
 
-- `$vnode`：开始渲染，`new Vue()`会生成当前节点和子节点，如果子节点是组件，会生成tag为`vue-component-${id}-${name}`的vnode，然后会通过vnode生成组件实例，在组件实例中生成的vnode则会继承部分父vnode的属性，且设置$vnode为父vnode。
+- `$vnode`：父组件通过_render()生成的当前需要渲染的vnode的children节点，tag为 `vue-component-${id}-${name}`的vnode。
 - `_vnode`：通过_render()生成的当前需要渲染的vnode，tag为模板的根节点
 
 所以，理论上一个组件有两个vnode，通过分散在不同的vue实例组装为树结构
