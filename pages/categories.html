@@ -19,7 +19,7 @@ title: 文章分类
       {%- for post in category[1] %}
       <li>
         <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
-        <a href="{{ site.baseurl | append: post.url }}" class="title hover-underline">{{ post.title }}</a>
+        <a href="{{ site.baseurl | append: post.url }}" class="title hover-underline" style="width: fit-contnet; flex-grow: unset;">{{ post.title }}</a>
       </li>
       {%- endfor %}
     </ul>
