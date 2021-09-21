@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: 使用Prettier+ESLint+Stylelint+husky+lint-staged+VS Code管理代码风格
-categories: [Vue.js]
+categories: [代码规范]
 ---
 
 本文主要介绍如何在团队中定制出一套统一的代码风格规则并且较好的执行下去。
@@ -31,7 +31,7 @@ Prettier 是一个 Opinionated 的代码格式化工具。支持前端几乎所�
 
     Prettier提供了文件 `.prettierrc` 修改默认配置规则，提供文件 `.prettierignore` 设置忽略文件
 
-    ```
+    ```yml
     # .prettierignore
 
     dist
@@ -52,15 +52,15 @@ ESLint是一个强大且灵活的Lint工具，它提供了大量的规则，内�
 
     1.  运行 `npm install -D eslint` 即可安装到项目中。根据具体项目框架等，可以安装对应的ESLint插件
 
-        ```
+        ```json
         // package.json
         {
-        	"devDependencies": {
-        		"eslint": "^7.32.0",
-            "eslint-config-prettier": "^8.3.0",
-            "eslint-plugin-prettier": "^4.0.0",
-            "eslint-plugin-vue": "^7.17.0",
-        	}
+            "devDependencies": {
+                "eslint": "^7.32.0",
+                "eslint-config-prettier": "^8.3.0",
+                "eslint-plugin-prettier": "^4.0.0",
+                "eslint-plugin-vue": "^7.17.0",
+            }
         }
         ```
 
@@ -70,7 +70,7 @@ ESLint是一个强大且灵活的Lint工具，它提供了大量的规则，内�
 
     ESLint提供了文件 `.eslintrc` 修改默认配置规则，提供文件 `.eslintignore` 设置忽略文件
 
-    ```
+    ```json
     // .eslintrc
     {
       "root": true,
@@ -112,14 +112,14 @@ Stylelint提供了更强大的样式格式规则
 
     1.  运行 `npm install -D stylelint stylelint-config-standard` 即可安装到项目中。根据具体项目框架等，可以安装对应的Stylelint插件
 
-        ```
+        ```json
         // package.json
         {
-        	"devDependencies": {
-        		"stylelint": "^13.13.1",
-            "stylelint-config-rational-order": "^0.1.2",
-            "stylelint-config-standard": "^22.0.0",
-        	}
+            "devDependencies": {
+        	"stylelint": "^13.13.1",
+                "stylelint-config-rational-order": "^0.1.2",
+                "stylelint-config-standard": "^22.0.0",
+            }
         }
         ```
 
@@ -129,7 +129,7 @@ Stylelint提供了更强大的样式格式规则
 
     Stylelint提供了文件 `.stylelintrc` 修改默认配置规则，提供文件 `.stylelintignore` 设置忽略文件
 
-    ```
+    ```json
     // .stylelintrc
     {
       "extends": [
@@ -150,16 +150,16 @@ Stylelint提供了更强大的样式格式规则
 
 VS Code中对Prettier，ESLint，Stylelint都提供了对应的插件，利用插件和配置，可以做到在编辑时，对对应格式的文件进行检查，在保存时自动格式化。配置如下
 
-```
+```json
 {
-	//* editor
-	"editor.codeActionsOnSave": {
-	  "source.fixAll.eslint": true,
-	  "source.fixAll.stylelint": true
-	},
-	// format
-  // "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //* editor
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    // format
+    // "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
 ```
 
@@ -175,20 +175,20 @@ VS Code中对Prettier，ESLint，Stylelint都提供了对应的插件，利用�
 
 1.  配置 lint-staged，可在 `.lintstagedrc` 或 `package.json` 中配置
 
-    ```
+    ```json
     // package.json
     {
-    	"lint-staged": {
-        "*.{html,js,jsx,vue}": [
-          "npm run lint:html"
-        ],
-        "*.{css,less,sass,scss,html,vue}": [
-          "npm run lint:css"
-        ],
-        "*.{js,jsx,vue}": [
-          "npm run lint:js"
-        ]
-      },
+        "lint-staged": {
+            "*.{html,js,jsx,vue}": [
+                "npm run lint:html"
+            ],
+            "*.{css,less,sass,scss,html,vue}": [
+                "npm run lint:css"
+            ],
+            "*.{js,jsx,vue}": [
+                "npm run lint:js"
+            ]
+        },
     }
     ```
 
